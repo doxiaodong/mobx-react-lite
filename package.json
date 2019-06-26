@@ -3,10 +3,11 @@
   "version": "2.0.0-test.0",
   "description": "Lightweight React bindings for MobX based on React 16.8 and Hooks",
   "main": "dist/index.js",
-  "jsnext:main": "dist/mobxreactlite.es.production.js",
-  "module": "dist/mobxreactlite.es.production.js",
   "typings": "dist/index.d.ts",
   "types": "dist/index.d.ts",
+  "jsnext:main": "dist/mobxreactlite.esm.js",
+  "module": "dist/mobxreactlite.esm.js",
+  "unpkg": "dist/mobxreactlite.umd.production.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/mobxjs/mobx-react-lite.git"
@@ -19,7 +20,7 @@
     "test:travis": "yarn validate && yarn lint && yarn coverage",
     "coverage": "jest --coverage",
     "prebuild": "rimraf dist",
-    "build": "tsdx build --name mobxReactLite",
+    "build": "tsdx build --name mobxReactLite --format=cjs,esm,umd",
     "prepublishOnly": "yarn build"
   },
   "author": "Daniel K.",
